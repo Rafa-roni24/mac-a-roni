@@ -1,1 +1,3 @@
-function doitnow
+function doitnow(){
+    alert(999)
+}
