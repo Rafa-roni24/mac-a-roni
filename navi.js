@@ -1,3 +1,1 @@
-function.doitnow(){
-    alert(999)
-}
+function doitnow
