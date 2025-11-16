@@ -1,3 +1,3 @@
 function doitnow(){
-    alert(999)
+    document.getElementById("someText").innerText = "some other important text"
 }
