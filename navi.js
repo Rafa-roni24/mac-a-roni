@@ -8,6 +8,22 @@ var theList = {
 }
 */
 
+function getList(){
+    const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'database.json', true);
+
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                const myObj = JSON.parse(this.responseText);
+                document.getElementById("output").innerHTML = `${myObj.main}`;
+            } else {
+                document.getElementById("output").innerHTML = 'Error fetching JSON:' + xhr.statusText;
+            }
+        };
+
+        xhr.send();
+}
+
 function doitnow(){
     //document.getElementById("someText").innerText = "some other important text"
     //document.getElementById("slideshow").src= "https://w7.pngwing.com/pngs/1008/247/png-transparent-multimedia-projectors-projector-thumbnail.png";
