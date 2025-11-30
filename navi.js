@@ -15,7 +15,7 @@ function getList(){
         xhr.onload = function() {
             if (xhr.status === 200) {
                 const myObj = JSON.parse(this.responseText);
-                document.getElementById("output").innerHTML = `${myObj.main}`;
+                document.getElementById("slideshow").src = `${myObj.main}`{counter};
             } else {
                 document.getElementById("output").innerHTML = 'Error fetching JSON:' + xhr.statusText;
             }
