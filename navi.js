@@ -16,6 +16,7 @@ function getList(){
             if (xhr.status === 200) {
                 myObj = JSON.parse(this.responseText);
                 document.getElementById("slideshow").src = myObj.main[counter];
+            document.getElementById("author").innerText = myObj.main[counter].author;
             } else {
                 document.getElementById("output").innerHTML = 'Error fetching JSON:' + xhr.statusText;
             }
@@ -27,7 +28,7 @@ function getList(){
 function doitnow(){
     //document.getElementById("someText").innerText = "some other important text"
     //document.getElementById("slideshow").src= "https://w7.pngwing.com/pngs/1008/247/png-transparent-multimedia-projectors-projector-thumbnail.png";
-    document.getElementById("slideshow").src = myObj.main[counter];
+    document.getElementById("slideshow").src = myObj.main[counter].url;
     document.getElementById("author").innerText = myObj.main[counter].author;
     counter++;
 }
