@@ -25,10 +25,16 @@ function getList(){
         xhr.send();
 }
 
-function doitnow(){
+function nextButton(){
     //document.getElementById("someText").innerText = "some other important text"
     //document.getElementById("slideshow").src= "https://w7.pngwing.com/pngs/1008/247/png-transparent-multimedia-projectors-projector-thumbnail.png";
     document.getElementById("slideshow").src = myObj.main[counter].url;
     document.getElementById("author").innerText = myObj.main[counter].author;
     counter++;
+}
+
+function prevButton(){
+    document.getElementById("slideshow").src = myObj.main[counter].url;
+    document.getElementById("author").innerText = myObj.main[counter].author;
+    counter--;
 }
