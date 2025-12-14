@@ -27,6 +27,7 @@ function getList(){
 
 function nextButton(){
     console.log(counter)
+    if (counter == myObj.main.length-1) return;
     //document.getElementById("someText").innerText = "some other important text"
     //document.getElementById("slideshow").src= "https://w7.pngwing.com/pngs/1008/247/png-transparent-multimedia-projectors-projector-thumbnail.png";
     document.getElementById("slideshow").src = myObj.main[counter].url;
@@ -36,6 +37,7 @@ function nextButton(){
 
 function prevButton(){
     console.log(counter)
+    if (counter == 0) return;
     document.getElementById("slideshow").src = myObj.main[counter].url;
     document.getElementById("author").innerText = myObj.main[counter].author;
     counter--;
