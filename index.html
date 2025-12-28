@@ -1,12 +1,22 @@
 <html>
     <head>
         <script src="navi.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-loading-overlay@1.1.0/dist/js-loading-overlay.min.js"></script>
+        <style>
+        	img.loading {
+			  opacity: 0;
+			  transition: opacity 0.4s;
+			}
+			img.loaded {
+			  opacity: 1;
+			}
+        </style>
+
     </head>
 <body onload = "getList()">
     <button><a onclick="prevButton()">prev ex.</a></button>
     <button><a onclick="nextButton()">next ex.</a></button><br>
     <p id="someText">Yaya, Gopal, Feng.</p><br>
-    i love to eat
     <img id="slideshow" src="" height="100"><br>
     <p id="author"> Author </p>
     <ul>
