@@ -4,8 +4,10 @@ var img;
 var newSrc;
 
 const overlayOpts = {
-    spinnerIcon: 'newt-cradle',
-    overlayBackgroundColor: 'rgba(255,255,255,0.8)'
+    spinnerIcon: 'ball-clip-rotate',
+    overlayBackgroundColor: '#ffffff',
+    spinnerColor: '#000000',
+    spinnerSize: '2x'
 };
 
 function getList(){
@@ -18,25 +20,28 @@ function getList(){
                 myObj = JSON.parse(this.responseText);
                 newSrc = myObj.main[counter].url;
                 
-                JsLoadingOverlay.show(overlayOpts); 
+                JsLoadingOverlay.show(overlayOpts);
                 img.onload = () => {
                   JsLoadingOverlay.hide(); 
                 };
-
                 img.src = newSrc;
-                document.getElementById("author").innerText = myObj.main[counter].author;
-                
-                let isClicked = false; 
+                /*document.getElementById("author").innerText = myObj.main[counter].author;
+                document.getElementById("slideshow").src = myObj.main[counter].url;
+                */
+                let isClicked = false; // Initialize a flag
 
-                document.getElementById("nb").addEventListener("click", () => {
+                  document.getElementById("nb").addEventListener("click", () => {
                     if (isClicked) return;
-                    // Trigger loader on specific element click if needed
+
                     JsLoadingOverlay.show(overlayOpts);
+                    
                     img.onload = () => {
                       JsLoadingOverlay.hide(); 
                     };
                     img.src = newSrc;
-                });
+                  });
+                
+                document.getElementById("author").innerText = myObj.main[counter].author;
             } else {
                 document.getElementById("output").innerHTML = 'Error fetching JSON:' + xhr.statusText;
             }
@@ -48,28 +53,32 @@ function getList(){
 function nextButton(){
     // if (counter == myObj.main.length-1) return;
     counter++;
-    
-    JsLoadingOverlay.show(overlayOpts); 
+
+    JsLoadingOverlay.show(overlayOpts);
     img.onload = () => {
       JsLoadingOverlay.hide(); 
     };
 
     img.src = myObj.main[counter].url;
-    document.getElementById("author").innerText = myObj.main[counter].author;
-    
     console.log(counter, img.src, myObj.main[counter].author);
+    
+    //document.getElementById("someText").innerText = "some other important text"
+    //document.getElementById("slideshow").src= "https://w7.pngwing.com/pngs/1008/247/png-transparent-multimedia-projectors-projector-thumbnail.png";
+    document.getElementById("slideshow").src = myObj.main[counter].url;
+    document.getElementById("author").innerText = myObj.main[counter].author;
 }
 
 function prevButton(){
     // if (counter == 0) return;
     counter--;
 
-    JsLoadingOverlay.show(overlayOpts); 
+    JsLoadingOverlay.show(overlayOpts);
     img.onload = () => {
       JsLoadingOverlay.hide(); 
     };
 
+    console.log(counter)
     document.getElementById("slideshow").src = myObj.main[counter].url;
     document.getElementById("author").innerText = myObj.main[counter].author;
-    console.log(counter);
 }
+
