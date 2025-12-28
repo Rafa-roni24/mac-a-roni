@@ -22,7 +22,10 @@ function getList(){
                 
                 JsLoadingOverlay.show(overlayOpts);
                 img.onload = () => {
-                  JsLoadingOverlay.hide(); 
+                  // Wait 1000ms (1 second) before hiding
+                  setTimeout(() => {
+                    JsLoadingOverlay.hide(); 
+                  }, 1000);
                 };
                 img.src = newSrc;
                 /*document.getElementById("author").innerText = myObj.main[counter].author;
@@ -36,7 +39,9 @@ function getList(){
                     JsLoadingOverlay.show(overlayOpts);
                     
                     img.onload = () => {
-                      JsLoadingOverlay.hide(); 
+                      setTimeout(() => {
+                        JsLoadingOverlay.hide(); 
+                      }, 1000);
                     };
                     img.src = newSrc;
                   });
@@ -56,7 +61,10 @@ function nextButton(){
 
     JsLoadingOverlay.show(overlayOpts);
     img.onload = () => {
-      JsLoadingOverlay.hide(); 
+      //1mlsc = 1sc
+      setTimeout(() => {
+        JsLoadingOverlay.hide(); 
+      }, 1000);
     };
 
     img.src = myObj.main[counter].url;
@@ -74,11 +82,13 @@ function prevButton(){
 
     JsLoadingOverlay.show(overlayOpts);
     img.onload = () => {
-      JsLoadingOverlay.hide(); 
+      // 1k milsc = 1 sc
+      setTimeout(() => {
+        JsLoadingOverlay.hide(); 
+      }, 1000);
     };
 
     console.log(counter)
     document.getElementById("slideshow").src = myObj.main[counter].url;
     document.getElementById("author").innerText = myObj.main[counter].author;
 }
-
