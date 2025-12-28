@@ -2,6 +2,7 @@ var counter = 0;
 var myObj;
 var img;
 var newSrc;
+var isLoading = false;
 
 const overlayOpts = {
     spinnerIcon: 'ball-clip-rotate',
@@ -20,11 +21,12 @@ function getList(){
                 myObj = JSON.parse(this.responseText);
                 newSrc = myObj.main[counter].url;
                 
+                isLoading = true;
                 JsLoadingOverlay.show(overlayOpts);
                 img.onload = () => {
-                  // Wait 1000ms (1 second) before hiding
                   setTimeout(() => {
                     JsLoadingOverlay.hide(); 
+                    isLoading = false;
                   }, 1000);
                 };
                 img.src = newSrc;
@@ -56,14 +58,16 @@ function getList(){
 }
 
 function nextButton(){
+    if (isLoading) return;
     // if (counter == myObj.main.length-1) return;
     counter++;
 
+    isLoading = true;
     JsLoadingOverlay.show(overlayOpts);
     img.onload = () => {
-      //1mlsc = 1sc
       setTimeout(() => {
         JsLoadingOverlay.hide(); 
+        isLoading = false;
       }, 1000);
     };
 
@@ -77,14 +81,16 @@ function nextButton(){
 }
 
 function prevButton(){
+    if (isLoading) return;
     // if (counter == 0) return;
     counter--;
 
+    isLoading = true;
     JsLoadingOverlay.show(overlayOpts);
     img.onload = () => {
-      // 1k milsc = 1 sc
       setTimeout(() => {
         JsLoadingOverlay.hide(); 
+        isLoading = false;
       }, 1000);
     };
 
