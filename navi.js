@@ -60,7 +60,7 @@ function getList(){
 }
 
 function nextButton(){
-    if (isLoading) return;
+    if (counter == myObj.main.length-1) return;
     else{
       counter++;
 
@@ -81,7 +81,7 @@ function nextButton(){
 }
 
 function prevButton(){
-    if (isLoading) return;
+    if (!counter) return;
     else{
       counter--;
 
