@@ -34,6 +34,7 @@ function getList(){
                 document.getElementById("slideshow").src = myObj.main[counter].url;
                 */
                 let isClicked = false; // Initialize a flag
+                /*
 
                   document.getElementById("nb").addEventListener("click", () => {
                     if (isClicked) return;
@@ -46,6 +47,7 @@ function getList(){
                       }, 1000);
                     };
                     img.src = newSrc;
+                    */
                   });
                 
                 document.getElementById("author").innerText = myObj.main[counter].author;
