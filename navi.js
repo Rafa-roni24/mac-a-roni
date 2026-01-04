@@ -59,42 +59,41 @@ function getList(){
 
 function nextButton(){
     if (isLoading) return;
-    // if (counter == myObj.main.length-1) return;
-    counter++;
+    else{
+      counter++;
 
-    isLoading = true;
-    JsLoadingOverlay.show(overlayOpts);
-    img.onload = () => {
-      setTimeout(() => {
-        JsLoadingOverlay.hide(); 
-        isLoading = false;
-      }, 1000);
-    };
+      isLoading = true;
+      JsLoadingOverlay.show(overlayOpts);
+      img.onload = () => {
+        setTimeout(() => {
+          JsLoadingOverlay.hide(); 
+          isLoading = false;
+        }, 1000);
+      };
 
-    img.src = myObj.main[counter].url;
-    console.log(counter, img.src, myObj.main[counter].author);
-    
-    //document.getElementById("someText").innerText = "some other important text"
-    //document.getElementById("slideshow").src= "https://w7.pngwing.com/pngs/1008/247/png-transparent-multimedia-projectors-projector-thumbnail.png";
-    document.getElementById("slideshow").src = myObj.main[counter].url;
-    document.getElementById("author").innerText = myObj.main[counter].author;
+      img.src = myObj.main[counter].url;
+      console.log(counter, img.src, myObj.main[counter].author);
+      document.getElementById("slideshow").src = myObj.main[counter].url;
+      document.getElementById("author").innerText = myObj.main[counter].author;
+  }
 }
 
 function prevButton(){
     if (isLoading) return;
-    // if (counter == 0) return;
-    counter--;
+    else{
+      counter--;
 
-    isLoading = true;
-    JsLoadingOverlay.show(overlayOpts);
-    img.onload = () => {
-      setTimeout(() => {
-        JsLoadingOverlay.hide(); 
-        isLoading = false;
-      }, 1000);
-    };
+      isLoading = true;
+      JsLoadingOverlay.show(overlayOpts);
+      img.onload = () => {
+        setTimeout(() => {
+          JsLoadingOverlay.hide(); 
+          isLoading = false;
+        }, 1000);
+      };
 
-    console.log(counter)
-    document.getElementById("slideshow").src = myObj.main[counter].url;
-    document.getElementById("author").innerText = myObj.main[counter].author;
+      console.log(counter)
+      document.getElementById("slideshow").src = myObj.main[counter].url;
+      document.getElementById("author").innerText = myObj.main[counter].author;
+  }
 }
