@@ -47,8 +47,8 @@ function getList(){
                       }, 1000);
                     };
                     img.src = newSrc;
-                    */
                   });
+                  */
                 
                 document.getElementById("author").innerText = myObj.main[counter].author;
             } else {
