@@ -12,6 +12,12 @@ const overlayOpts = {
 };
 
 function getList(){
+    if (window.innerWidth <= 768) {
+      console.log("Mobile device");
+    } else {
+      console.log("Desktop device");
+    }
+
     img = document.getElementById("slideshow");
     const xhr = new XMLHttpRequest();
         xhr.open('GET', 'database.json', true);
