@@ -2,17 +2,17 @@
     <head>
         <script src="navi.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/js-loading-overlay@1.1.0/dist/js-loading-overlay.min.js"></script>
-        <style>
-            @keyframes wave {
-                0%, 100% {
-                    transform: translateY(0);
-                }
-                50% {
-                    transform: translateY(-20px);
-                }
-            }
+    </head>
+    <style>
+            img.loading {
+			  opacity: 0;
+			  transition: opacity 0.4s;
+			}
+			img.loaded {
+			  opacity: 1;
+			}
 
-              body {
+            body {
                 background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	            background-size: 400% 400%;
 	            animation: gradient 15s ease infinite;
@@ -36,9 +36,7 @@
                 color: black;
                 padding: 2px;
             }
-        </style>
-
-    </head>
+    </style>
 <body onload = "getList()">
     <button><id="nb" a onclick="prevButton()">←</a></button>
     <button><id="pv" a onclick="nextButton()">→</a></button><br>

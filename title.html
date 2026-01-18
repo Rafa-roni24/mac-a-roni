@@ -1,32 +1,10 @@
 <html>
-    <body>
-         <h1 class="wave-text">
-            <span>W</span>
-            <span>a</span>
-            <span>l</span>
-            <span>l</span>
-            <span> </span>
-            <span>O</span>
-            <span>f</span>
-            <span> </span>
-            <span>F</span>
-            <span>a</span>                
-            <span>m</span>
-            <span>e</span>
-        </h1><br>
-        <h6>by Shereen & Mr. Amhar</h6>
+    <head>
         <style>
             /*h1 {
                 font-size : 14px;
             }*/
 
-            img.loading {
-			  opacity: 0;
-			  transition: opacity 0.4s;
-			}
-			img.loaded {
-			  opacity: 1;
-			}
             .wave-text span {
                 display: inline-block;
                 font-size: 4rem;
@@ -48,6 +26,32 @@
             .wave-text span:nth-child(5) {
                 animation-delay: 0.8s;
             }
+
+            @keyframes wave {
+                0%, 100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-20px);
+                }
+            }
         </style>
+    </head>
+    <body>
+         <h1 class="wave-text">
+            <span>W</span>
+            <span>a</span>
+            <span>l</span>
+            <span>l</span>
+            <span> </span>
+            <span>O</span>
+            <span>f</span>
+            <span> </span>
+            <span>F</span>
+            <span>a</span>                
+            <span>m</span>
+            <span>e</span>
+        </h1>
+        <h6>by Shereen & Mr. Amhar</h6>
     </body>
 </html>
