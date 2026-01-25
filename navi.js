@@ -106,7 +106,7 @@ function resize_pic(){
   
   function make_it_clickable(){
     document.getElementById("slideshow").addEventListener('click', function() {
-      window.open('https://www.google.com', '_blank');
+      window.open(myObj.main[counter].author, '_blank');
     });
   }
 }
