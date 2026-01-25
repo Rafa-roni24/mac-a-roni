@@ -14,10 +14,10 @@ const overlayOpts = {
 function getList(){
   if (window.innerWidth <= 768) {
       //console.log("Mobile device");
-        document.body.innerHTML += "<p>Mobile device";
+        document.body.innerHTML += "<p>Mobile device</p>";
     } else {
       //console.log("Desktop device");
-        document.body.innerHTML += "<p>Desktop device";
+        document.body.innerHTML += "<p>Desktop device</p>";
     }
 
     img = document.getElementById("slideshow");
