@@ -12,10 +12,12 @@ const overlayOpts = {
 };
 
 function getList(){
-    if (window.innerWidth <= 768) {
-      console.log("Mobile device");
+  if (window.innerWidth <= 768) {
+      //console.log("Mobile device");
+        document.body.innerHTML += "<p>Mobile device";
     } else {
-      console.log("Desktop device");
+      //console.log("Desktop device");
+        document.body.innerHTML += "<p>Desktop device";
     }
 
     img = document.getElementById("slideshow");
