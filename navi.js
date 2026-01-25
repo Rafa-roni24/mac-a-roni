@@ -42,22 +42,7 @@ function getList(){
                 document.getElementById("slideshow").src = myObj.main[counter].url;
                 */
                 let isClicked = false; // Initialize a flag
-                /*
-
-                  document.getElementById("nb").addEventListener("click", () => {
-                    if (isClicked) return;
-
-                    JsLoadingOverlay.show(overlayOpts);
-                    
-                    img.onload = () => {
-                      setTimeout(() => {
-                        JsLoadingOverlay.hide(); 
-                      }, 1000);
-                    };
-                    img.src = newSrc;
-                  });
-                  */
-                
+                resize_pic();
                 document.getElementById("author").innerText = myObj.main[counter].author;
             } else {
                 document.getElementById("output").innerHTML = 'Error fetching JSON:' + xhr.statusText;
@@ -86,6 +71,7 @@ function nextButton(){
       document.getElementById("slideshow").src = myObj.main[counter].url;
       document.getElementById("author").innerText = myObj.main[counter].author;
   }
+  resize_pic();
 }
 
 function prevButton(){
@@ -105,5 +91,22 @@ function prevButton(){
       console.log(counter)
       document.getElementById("slideshow").src = myObj.main[counter].url;
       document.getElementById("author").innerText = myObj.main[counter].author;
+  }
+  resize_pic();
+}
+
+function resize_pic(){
+  if (window.innerWidth <= 768) {
+    document.getElementById("slideshow").style.width = "100%";
+    document.getElementById("slideshow").style.height = "auto";
+  } else {
+    document.getElementById("slideshow").style.width = "80%";
+    document.getElementById("slideshow").style.height = "auto";
+  }
+  
+  function make_it_clickable(){
+    document.getElementById("slideshow").addEventListener('click', function() {
+      window.open('https://www.google.com', '_blank');
+    });
   }
 }

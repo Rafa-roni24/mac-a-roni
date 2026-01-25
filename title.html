@@ -36,9 +36,20 @@
                 }
             }
         </style>
+        <script>
+        if (window.innerWidth <= 768) {
+            //console.log("Mobile device");
+            //document.body.innerHTML += "<p>Mobile device</p>";
+        document.getElementById("the_title").style.fontSize = "2rem";
+        } else {
+            //console.log("Desktop device");
+            //document.body.innerHTML += "<p>Desktop device</p>";
+        document.getElementById("the_title").style.fontSize = "4rem";
+        }
+        </script>
     </head>
     <body>
-         <h1 class="wave-text">
+         <h1 id= "the_title" class="wave-text">
             <span>W</span>
             <span>a</span>
             <span>l</span>
