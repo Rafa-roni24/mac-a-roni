@@ -41,11 +41,11 @@
             if (window.innerWidth <= 768) {
                 //console.log("Mobile device");
                 //document.body.innerHTML += "<p>Mobile device</p>";
-            document.getElementById("the_title").style.fontSize = "2rem";
+            document.querySelectorAll("#the_title span").forEach(el => el.style.fontSize = "2rem");
             } else {
                 //console.log("Desktop device");
                 //document.body.innerHTML += "<p>Desktop device</p>";
-            document.getElementById("the_title").style.fontSize = "4rem";
+            document.querySelectorAll("#the_title span").forEach(el => el.style.fontSize = "4rem");
         }
             }
         </script>
