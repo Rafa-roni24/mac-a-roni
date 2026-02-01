@@ -100,8 +100,8 @@ function resize_pic(){
     document.getElementById("slideshow").style.width = "100%";
     document.getElementById("slideshow").style.height = "auto";
   } else {
-    document.getElementById("slideshow").style.width = "80%";
-    document.getElementById("slideshow").style.height = "auto";
+    document.getElementById("slideshow").style.width = "auto";
+    document.getElementById("slideshow").style.height = "80%";
   }
   
   function make_it_clickable(){
