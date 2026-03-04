@@ -2,41 +2,75 @@
     <head>
         <script src="navi.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/js-loading-overlay@1.1.0/dist/js-loading-overlay.min.js"></script>
-    </head>
-    <style>
-            img.loading {
-			  opacity: 0;
-			  transition: opacity 0.4s;
-			}
-			img.loaded {
-			  opacity: 1;
-			}
+        <iframe src=".html" width="100%" height="100&" title="BG">
 
+        </iframe>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <title>Background & Confetti</title>
+
+        <style>
+        /* =================================
+            BASE
+        ================================= */
             body {
-                background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	            background-size: 400% 400%;
-	            animation: gradient 15s ease infinite;
-	            height: 100vh;
-            }
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1b5e20, #2e7d32, #ef6c00);
+        }
 
-            @keyframes gradient {
-	            0% {
-		            background-position: 0% 50%;
-	            }
-	            50% {
-		            background-position: 100% 50%;
-	            }
-	            100% {
-		            background-position: 0% 50%;
-	            }
-            }
+        /* =================================
+            ISLAMIC GEOMETRIC PATTERN
+        ================================= */
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.12;
+            background:
+                repeating-linear-gradient(45deg, white 0 2px, transparent 2px 40px),
+                repeating-linear-gradient(-45deg, white 0 2px, transparent 2px 40px);
+            pointer-events: none;
+            z-index: 0;
+        }
 
-            #author {
-                background-color: yellow;
-                color: black;
-                padding: 2px;
+        .confetti {
+            position: absolute;
+            width: 8px;
+            height: 12px;
+            z-index: 1;
+            animation: fall 2.5s linear forwards;
+        }
+
+        @keyframes fall {
+                0% {
+                transform: translateY(-20px) rotate(0deg);
+                opacity: 1;
             }
+            100% {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
     </style>
+    <script>
+        const colors = ["#fff", "#ffb74d", "#c8ffb0"];
+
+        for(let i = 0; i < 120; i++) {
+            const c = document.createElement("div");
+            c.className = "confetti";
+            c.style.left = Math.random() * 100 + "vw";
+            c.style.top = "-20px";
+            c.style.background = colors[Math.floor(Math.random() * 3)];
+            // Randomize the fall delay and duration for a natural look
+            c.style.animationDelay = Math.random() * 2 + "s";
+            c.style.animationDuration = (Math.random() * 2 + 2) + "s"; 
+            document.body.appendChild(c);
+        }
+    </script>
 <body onload = "getList()">
     <button><id="nb" a onclick="prevButton()">←</a></button>
     <button><id="pv" a onclick="nextButton()">→</a></button>&emsp;
